@@ -106,22 +106,41 @@ Chceš hrát znovu? (a/n): n
   - zda má hráč **dvojici**,  
   - zda má hráč **postupku**.  
   - případně další...
+ - Zkuste hru následně rozšířit o více hráčů. Generujte 3 karty na stole, 2 karty v ruce hráče A a 2 karty v ruce hráče B. Jaká je nejvyšší kombinae karet, kterou hráči mají? Kdo z nich by vyhrál?
+
+Na podobném principu lze vytvořit celou hru *Texas hold 'em*.
 
 ---
 
-### 6.2 Monte Carlo simulace
+### 6.2 Generátor sudoku
+- Vytvoř program, který náhodně vygeneruje zadání sudoku.  
+- Podle hodnoty proměnné `komplet`:  
+  - pokud `komplet=True`, vypíše celé vyplněné sudoku,  
+  - pokud `komplet=False`, vypíše jen část zadání (např. polovinu všech číslic).  
+- Výstupem programu bude vykreslená deska se zadáním sudoku na terminál. Např.:
+
+```
++-------+-------+-------+
+| 5 3 . | . 7 . | . . . |
+| 6 . . | 1 9 5 | . . . |
+| . 9 8 | . . . | . 6 . |
++-------+-------+-------+
+| 8 . . | . 6 . | . . 3 |
+| 4 . . | 8 . 3 | . . 1 |
+| 7 . . | . 2 . | . . 6 |
++-------+-------+-------+
+| . 6 . | . . . | 2 8 . |
+| . . . | 4 1 9 | . . 5 |
+| . . . | . 8 . | . 7 9 |
++-------+-------+-------+
+```
+
+---
+
+## 7. Monte Carlo simulace
 - Pomocí generování náhodných bodů odhadni číslo π.  
 - Vygeneruj `N` náhodných bodů v jednotkovém čtverci.  
 - Spočítej, kolik jich leží v kruhu o poloměru 1.  
 - Použij vztah:  
   ```
   π ≈ 4 * (počet bodů v kruhu / celkový počet bodů)
-  ```
-
----
-
-### 6.3 Generátor sudoku
-- Vytvoř program, který náhodně vygeneruje zadání sudoku.  
-- Podle hodnoty proměnné `komplet`:  
-  - pokud `komplet=True`, vypíše celé vyplněné sudoku,  
-  - pokud `komplet=False`, vypíše jen část zadání (např. polovinu číslic).  

@@ -1,0 +1,5 @@
+heslo
+password
+1234
+qwerty
+skola
