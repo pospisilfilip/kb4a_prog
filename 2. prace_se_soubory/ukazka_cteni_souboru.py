@@ -1,6 +1,6 @@
 # Příklad cesty k souboru
 # todo: možná bude nutné upravit cestu
-cesta = "data/slova.txt"
+cesta = "2. prace_se_soubory\data\slova.txt"
 
 
 # Otevření souboru v režimu pro čtení ("r") s UTF-8 kódováním
