@@ -1,0 +1,15 @@
+cesta = "Kody\chatlog.txt"
+
+domer = True
+
+with open(cesta, "w", encoding="utf-8") as file:
+    while domer == True:
+        jmeno = input("Jméno:")
+        zprava = input("Zpráva:")
+        
+        file.write(jmeno+":"+zprava)
+
+        if jmeno.strip() or zprava.strip() == "konec":
+            domer = False
+
+
