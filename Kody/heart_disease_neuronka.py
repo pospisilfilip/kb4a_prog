@@ -62,28 +62,17 @@ trening_X, test_X, trening_Y, test_Y  = train_test_split(
 
 
 neural_network = MLPClassifier(
-    hidden_layer_sizes=(64, 32, 16),  # Zkuste více neuronů ve vrstvách
-    activation="relu",  # Můžete zkusit "tanh" nebo "leaky_relu"
-    max_iter=4000,  # Můžete přizpůsobit podle potřeby
-    verbose=2,  # Víc výstupů pro sledování procesu
+    hidden_layer_sizes=(64, 32, 16),  # Více neuronů ve vrstvách
+    activation="relu",  # Nebo "tanh", davalo horsi vysledky "
+    max_iter=4000,  
+    verbose=2,  
     random_state=42,
-    n_iter_no_change=40,  # Můžete zkusit i 10 nebo 50 podle potřeby
-    alpha=0.001,  # Regulace proti overfittingu
-    solver="adam",  # Nebo zkuste "sgd"
+    n_iter_no_change=40,  
+    alpha=0.001,  
+    solver="adam",  # Nebo "sgd, ale ta davala horsi vysledky"
 )
 
 neural_network.fit(trening_X, trening_Y)
-
-# ---------- Vyhodnocení ----------
-results = neural_network.predict(test_X)
-
-correct = 0
-for i in range(len(results)):
-    if test_Y[i] == results[i]:
-        correct += 1
-print("Přesnost:", correct / len(results))
-
-
 
 
 
@@ -98,7 +87,19 @@ X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_
 rf = RandomForestClassifier(n_estimators=100, random_state=42)
 rf.fit(X_train, y_train)
 
-# Predikce a vyhodnocení přesnosti
+
+
+
+
+#----------Predikce a vyhodnocení přesnosti-----------------
+results = neural_network.predict(test_X)
+
+correct = 0
+for i in range(len(results)):
+    if test_Y[i] == results[i]:
+        correct += 1
+print("Přesnost:", correct / len(results))
+
 y_pred = rf.predict(X_test)
 print("Přesnost Random Forest:", accuracy_score(y_test, y_pred))
 
