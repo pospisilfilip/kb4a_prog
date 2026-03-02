@@ -23,6 +23,12 @@
 #Neuronová síť (MLPClassifier): 64.88%
 #Random Forest dosáhl výrazně vyšší přesnosti (98.54%), což ukazuje, že tento model je pro tuto konkrétní úlohu silnější a lépe odhaluje vzory v datech.
 
+# Model by v současné podobě nebyl vhodný jako samostatný diagnostický nástroj. 
+# I když dosahuje poměrně slušné přesnosti, z konfuzní matice vyplývá, že hůře odhaluje skutečně nemocné pacienty, což je v medicíně zásadní problém.
+
+# Využití by proto bylo možné spíše jako podpůrný nebo screeningový nástroj, nikoli jako náhrada lékařského rozhodování.
+# Lékařům bych jej v této fázi doporučil pouze jako pomocný systém, nikoli jako plnohodnotný klinický nástroj.
+
 
 
 import csv
@@ -62,7 +68,7 @@ trening_X, test_X, trening_Y, test_Y  = train_test_split(
 
 
 neural_network = MLPClassifier(
-    hidden_layer_sizes=(64, 32, 16),  # Více neuronů ve vrstvách
+    hidden_layer_sizes=(16, 8),  
     activation="relu",  # Nebo "tanh", davalo horsi vysledky "
     max_iter=4000,  
     verbose=2,  
