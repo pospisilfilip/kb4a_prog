@@ -20,7 +20,7 @@
 
 #Úspěšnost a využití: 
 #Random forest: 98.54%
-#Neuronová síť (MLPClassifier): 64.88%
+#Neuronová síť (MLPClassifier): 78.04%
 #Random Forest dosáhl výrazně vyšší přesnosti (98.54%), což ukazuje, že tento model je pro tuto konkrétní úlohu silnější a lépe odhaluje vzory v datech.
 
 # Model by v současné podobě nebyl vhodný jako samostatný diagnostický nástroj. 
@@ -55,7 +55,7 @@ with open("3. strojove_uceni\data\heart_disease_dataset.csv", "r", encoding="utf
         heart_disease = int(row["heart_disease"])
 
 
-        X.append([age, sex, trestbps, chol, fbs])
+        X.append([age, sex, cp, trestbps, chol, fbs])
         Y.append(heart_disease)
 
 
